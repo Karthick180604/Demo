@@ -10,13 +10,15 @@
     <input type="number" id="numberInput" min="1">
     <button onclick="calculateSum()">Calculate Sum</button>
     <p id="result"></p>
+    
     <script>
     function calculateSum() {
         const n = parseInt(document.getElementById('numberInput').value, 10);
-        let sum = 0;
-        for (let i = 1; i <= n; i++) {
-            sum += i;
+        if (isNaN(n) || n < 1) {
+            document.getElementById('result').textContent = 'Please enter a valid positive number.';
+            return;
         }
+        const sum = n * (n + 1) / 2;
         document.getElementById('result').textContent = 'Sum of 1 to ' + n + ' is: ' + sum;
     }
     </script>
