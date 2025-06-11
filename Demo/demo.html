@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
+    <label for="numberInput">Enter a number (n): </label>
+    <input type="number" id="numberInput" min="1">
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <p id="result"></p>
+    <script>
+    function calculateSum() {
+        const n = parseInt(document.getElementById('numberInput').value, 10);
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+        }
+        document.getElementById('result').textContent = 'Sum of 1 to ' + n + ' is: ' + sum;
+    }
+    </script>
     <h1>hello it is from trial branch...... </h1>
     <h1>this is from master............</h1>
 </body>
